@@ -7,30 +7,127 @@ body {
   width: 100%;
   height: 100%;
   max-height: 100vh;
+  font-family: "Lato", sans-serif;
 }
 
 .options {
   margin-top: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-bottom: 20px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(175, 200, 255);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px #80a1c2;
+  transition: all 0.3s;
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid gray;
+  box-shadow: 0px 0px 30px #80a1c2;
+  transition: all 0.3s;
 }
 
 .container > div {
   background-color: white;
 }
 
-.new-color {
-  background-color: black;
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.newSize {
+  -moz-appearance: textfield;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+  max-height: 30px;
+  line-height: 10px;
+  background-color: white;
+  border: none;
+}
+
+.options__right {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.options__right > input {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.options__right > button {
+  margin-right: 10px;
+}
+
+/* COMMON RADIO AND CHECKBOX STYLES  */
+input[type="radio"],
+input[type="checkbox"] {
+  /* Hide original inputs */
+  visibility: hidden;
+  position: absolute;
+}
+input[type="radio"] + label:before,
+input[type="checkbox"] + label:before {
+  height: 12px;
+  width: 12px;
+  margin-right: 2px;
+  content: " ";
+  display: inline-block;
+  vertical-align: baseline;
+  border: 1px solid blue;
+}
+input[type="radio"]:checked + label:before,
+input[type="checkbox"]:checked + label:before {
+  background: blue;
+}
+
+/* CUSTOM RADIO AND CHECKBOX STYLES */
+input[type="radio"] + label:before {
+  border-radius: 50%;
+}
+input[type="checkbox"] + label:before {
+  border-radius: 2px;
+}
+
+@media (min-width: 600px) {
+  .container {
+    height: 500px;
+    width: 500px;
+  }
+
+  .options {
+    width: 500px;
+  }
+}
+
+@media (min-width: 800px) {
+  .container {
+    height: 700px;
+    width: 700px;
+  }
+
+  .options {
+    width: 700px;
+  }
 }

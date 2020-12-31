@@ -4,15 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>etch-a-sketch</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="./style.css">
     <script defer src="./app.js"></script>
 </head>
 <body>
     <div class="options">
-        <label for="">Grid Size:</label>
-        <input class="newSize" type="number" min="1" max="100">
-        <button class="submit">Submit</button>
-        <button class="clear">Clear</button>
+        <form>
+            <div>
+                <input type="radio" id="black" checked="true" name="choice">
+                <label for="black">Black</label>
+            </div>
+            <div>
+                <input type="radio" id="grayscale" name="choice">
+                <label for="grayscale">Grayscale/Darken</label>
+            </div>
+            <div>
+                <input type="radio" id="random-color" name="choice">
+                <label for="random-color">Random Color</label>
+            </div>
+        </form>
+        <div class="options__right">
+            <label for="">Grid Size:</label>
+            <input class="newSize" type="number" min="1" max="100">
+            <button class="submit btn">Submit</button>
+            <button class="clear btn">Clear</button>
+        </div>
     </div>
     <div class="container">
 
